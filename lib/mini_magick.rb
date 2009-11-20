@@ -169,7 +169,7 @@ module MiniMagick
     end
 
     def method_missing(symbol, *args)
-      @args << "-#{symbol}"
+      @args << "-#{symbol.to_s.dasherize}"
       @args += args
     end
 
